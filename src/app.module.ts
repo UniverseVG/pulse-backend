@@ -59,10 +59,10 @@ import { UserProjectMappingService } from './service/userProjectMapping/userProj
 })
 export class AppModule {
   constructor(private readonly configService: ConfigService) {
-    const region = this.configService.get<string>('AWS_REGION');
-    const accessKeyId = this.configService.get<string>('AWS_ACCESS_KEY_ID');
+    const region = this.configService.get<string>('MY_AWS_REGION');
+    const accessKeyId = this.configService.get<string>('MY_AWS_ACCESS_KEY_ID');
     const secretAccessKey = this.configService.get<string>(
-      'AWS_SECRET_ACCESS_KEY',
+      'MY_AWS_SECRET_ACCESS_KEY',
     );
     if (!region || !accessKeyId || !secretAccessKey) {
       throw new Error(
